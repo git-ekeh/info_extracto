@@ -11,7 +11,6 @@ def data_scrape():
     webpage = webpage_response.content
     soup = BeautifulSoup(webpage, 'html.parser')
     page_links = soup.find_all("p")
-    urls = []
     train = open("training_file.txt", "w+")
     for tag in page_links: 
         train.write(str(tag.get_text()))
